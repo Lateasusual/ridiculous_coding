@@ -7,8 +7,9 @@ var timer = 0.0
 var last_key = ""
 var pitch_increase := 0.0
 var editors = {}
+var color_counter = 0
 
-const PITCH_DECREMENT := 2.0
+const PITCH_DECREMENT := 10.0
 
 const Boom = preload("boom.tscn")
 const Blip = preload("blip.tscn")
@@ -172,6 +173,8 @@ func text_changed(textedit : TextEdit):
 				thing.destroy = true
 				if dock.chars: thing.last_key = last_key
 				thing.sound = dock.sound
+				thing.color_counter = color_counter
+				color_counter += 1
 				textedit.add_child(thing)
 				
 				if dock.shake:
@@ -189,6 +192,8 @@ func text_changed(textedit : TextEdit):
 			thing.position = pos
 			thing.destroy = true
 			thing.blips = dock.blips
+			thing.color_counter = color_counter
+			color_counter += 1
 			if dock.chars: thing.last_key = last_key
 			thing.sound = dock.sound
 			textedit.add_child(thing)
