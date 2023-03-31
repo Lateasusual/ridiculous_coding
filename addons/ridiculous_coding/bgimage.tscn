@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlt3tt0mf2yyg"]
+
+[ext_resource type="Texture2D" uid="uid://bc5kst2rs5ito" path="res://addons/ridiculous_coding/images/maid.png" id="1_700q3"]
+[ext_resource type="Script" path="res://addons/ridiculous_coding/pick_image.gd" id="2_qvuef"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1152.0
+offset_top = -648.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+modulate = Color(1, 1, 1, 0.505882)
+texture_filter = 4
+custom_minimum_size = Vector2(512, 512)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -512.0
+offset_right = 512.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(-1, 1)
+pivot_offset = Vector2(0, 512)
+mouse_filter = 2
+texture = ExtResource("1_700q3")
+expand_mode = 3
+stretch_mode = 4
+flip_h = true
+script = ExtResource("2_qvuef")
+metadata/_edit_use_anchors_ = true
