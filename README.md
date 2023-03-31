@@ -1,6 +1,8 @@
 # ridiculous_coding for Godot
 
-Written by John Watson
+## Forked by Lateasusual to port to Godot 4.0, and add some extra personal touches 😽
+
+Original written by John Watson
 
 ## What does it do?
 
@@ -33,8 +35,6 @@ res://
 
 ![Enable plugin](readme-enable.png)
 
-## About me
+## Original repository:
 
-Hey, I'm John and I'm making a game in Godot called [Gravity Ace](https://gravityace.com).
-
-Come follow me on [Twitter](https://twitter.com/yafd) and [wishlist the game on Steam](https://store.steampowered.com/app/1003860/Gravity_Ace/) and [itch.io](https://jotson.itch.io/gravity)!
+https://github.com/jotson/ridiculous_coding
