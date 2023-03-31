@@ -1,4 +1,4 @@
-tool
+@tool
 extends Control
 
 var explosions = true
@@ -8,7 +8,7 @@ var shake = true
 var sound = true
 var fireworks = true
 
-const BASE_XP = 50
+const BASE_XP = 10
 var xp : int = 0
 var xp_next : int = 2*BASE_XP
 var level : int = 1
@@ -17,13 +17,13 @@ const STATS_FILE = "user://ridiculous_xp.ini"
 
 
 func _ready():
-	$VBoxContainer/GridContainer/explosionCheckbox.pressed = explosions
-	$VBoxContainer/GridContainer/blipCheckbox.pressed = blips
-	$VBoxContainer/GridContainer/charsCheckbox.pressed = chars
-	$VBoxContainer/GridContainer/shakeCheckbox.pressed = shake
-	$VBoxContainer/GridContainer/soundCheckbox.pressed = sound
-	$VBoxContainer/GridContainer/fireworksCheckbox.pressed = fireworks
-
+	$VBoxContainer/GridContainer/explosionCheckbox.button_pressed = explosions
+	$VBoxContainer/GridContainer/blipCheckbox.button_pressed = blips
+	$VBoxContainer/GridContainer/charsCheckbox.button_pressed = chars
+	$VBoxContainer/GridContainer/shakeCheckbox.button_pressed = shake
+	$VBoxContainer/GridContainer/soundCheckbox.button_pressed = sound
+	$VBoxContainer/GridContainer/fireworksCheckbox.button_pressed = fireworks
+	
 	# Load saved XP and level
 	if stats.load(STATS_FILE) == OK:
 		level = stats.get_value("xp", "level", 1)
@@ -31,7 +31,7 @@ func _ready():
 	else:
 		level = 1
 		xp = 0
-	var progress : TextureProgress = $VBoxContainer/XP/ProgressBar
+	var progress : TextureProgressBar = $VBoxContainer/XP/ProgressBar
 	xp_next = 2*BASE_XP
 	progress.max_value = xp_next
 	for i in range(2,level+1):
@@ -41,10 +41,9 @@ func _ready():
 
 	update_progress()
 	stop_fireworks()
-	
 
 func _on_typing():
-	var progress : TextureProgress = $VBoxContainer/XP/ProgressBar
+	var progress : TextureProgressBar = $VBoxContainer/XP/ProgressBar
 	
 	xp += 1
 	progress.value += 1
